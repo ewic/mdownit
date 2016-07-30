@@ -2,7 +2,7 @@
 
 ## Description
 
-This will hopefully be a document store buitl to display and organize markdown files
+This will hopefully be a document store built to display and organize markdown files.  Also using this as an opportunity to create 
 
 ## Objectives
 
@@ -85,4 +85,22 @@ Ignoring `node_modules` and `jspm_modules` because they should be installed by a
 * framework
 * connection to gallery
 
-### Gallery
+## Architectural Overview
+
+The primary purpose of this project is to educate myself in the use of several different web technologies together into a complete web application.  This is a breakdown of architecture so that it can be clear how all the pieces come together.
+
+### Building the App
+
+Running `npm install` will download all the necessary packages outlined in `package.json` into the `node_modules` directory.  The major ones are the following:
+
+* RequireJS - In-browser JS file and module loader
+* BackboneJS - Barebones MVC framework for JS
+* Bootstrap - HTML, CSS and JS framework for front-end layout and design
+
+`build.sh` is a simple shell script that copies the files that were downloaded into the `node_modules` directory into places that the app expects them to be.  The `/site/lib/` directory is the destination for all of these files.
+
+### The index.html file
+
+`index.html` serves as the main entry point of the whole app.  You'll notice that the css is referenced directly in the sheet, but the js is not.  This is because the JS is loaded via RequireJS in `js/app.js`.  `app.js` contains configuration for all the various JS libraries involved.
+
+Boostrap is loaded via a shim.  See the configuration block in `app.js`.  

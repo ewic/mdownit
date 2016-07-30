@@ -2,7 +2,9 @@ require.config({
 	'baseUrl': '/',
 
 	'shim': {
-		'bootstrap': { 'deps': ['jquery'] }
+		'bootstrap': { 'deps': ['jquery'] },
+		'backbone': { 'deps': ['underscore', 'jquery'],
+						'exports': 'Backbone' }
 	},
 
 	'paths': {
@@ -17,8 +19,8 @@ require.config({
 	}
 });
 
-define([ 'jquery', 'underscore', 'backbone', 'bootstrap' ],function( $, _, Backbone ) {
-	console.log($);
-	console.log(_);
-	console.log(Backbone);
+require(['js/router'], function() {
+	var router = new Router;
+
+	Backbone.history.start();
 });
