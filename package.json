@@ -17,6 +17,7 @@
     "bootstrap": "^3.3.6",
     "connect": "^3.4.1",
     "jquery": "^3.1.0",
+    "mustache": "^2.2.1",
     "requirejs": "^2.2.0",
     "serve-static": "^1.11.1",
     "underscore": "^1.8.3"
