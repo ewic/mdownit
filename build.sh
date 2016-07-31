@@ -12,6 +12,7 @@ cp ./node_modules/backbone/backbone-min.js ./site/lib/js/
 cp ./node_modules/backbone/backbone-min.map ./site/lib/js/
 cp ./node_modules/underscore/underscore-min.js ./site/lib/js/
 cp ./node_modules/underscore/underscore-min.map ./site/lib/js/
+cp ./node_modules/mustache/mustache.min.js ./site/lib/js/
 
 echo "JS deployed"
 
